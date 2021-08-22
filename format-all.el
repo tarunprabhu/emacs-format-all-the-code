@@ -35,6 +35,7 @@
 ;; - CMake (cmake-format)
 ;; - Crystal (crystal tool format)
 ;; - CSS/Less/SCSS (prettier)
+;; - Cuda (clang-format)
 ;; - D (dfmt)
 ;; - Dart (dartfmt)
 ;; - Dhall (dhall format)
@@ -126,6 +127,7 @@
     ("CMake" cmake-format)
     ("Crystal" crystal)
     ("CSS" prettier)
+    ("Cuda" clang-format)
     ("D" dfmt)
     ("Dart" dartfmt)
     ("Dhall" dhall)
@@ -679,7 +681,7 @@ Consult the existing formatters for examples of BODY."
   (:install
    (macos "brew install clang-format")
    (windows "scoop install llvm"))
-  (:languages "C" "C#" "C++" "GLSL" "Java" "Objective-C" "Protocol Buffer")
+  (:languages "C" "C#" "C++" "Cuda" "GLSL" "Java" "Objective-C" "Protocol Buffer")
   (:features region)
   (:format
    (format-all--buffer-easy
@@ -690,6 +692,7 @@ Consult the existing formatters for examples of BODY."
                     '(("C"               . ".c")
                       ("C#"              . ".cs")
                       ("C++"             . ".cpp")
+                      ("Cuda"            . ".cu")
                       ("GLSL"            . ".glsl")
                       ("Java"            . ".java")
                       ("Objective-C"     . ".m")
